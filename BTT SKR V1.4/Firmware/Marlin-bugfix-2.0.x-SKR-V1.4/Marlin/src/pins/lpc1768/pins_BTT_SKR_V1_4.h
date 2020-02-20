@@ -40,9 +40,12 @@
 //
 // Limit Switches
 //
-#define X_STOP_PIN         P1_29
-#define Y_STOP_PIN         P1_28
-#define Z_STOP_PIN         P1_27
+#define X_MIN_PIN         P1_29
+#define X_MAX_PIN         P1_28
+#define Y_MIN_PIN         P1_27
+#define Y_MAX_PIN         P1_26
+#define Z_MIN_PIN         P0_10
+#define Z_MAX_PIN         P0_10
 
 //
 // Servos
@@ -59,8 +62,8 @@
 //
 // Filament Runout Sensor
 //
-#define FIL_RUNOUT_PIN     P1_26
-#define FIL_RUNOUT2_PIN    P1_25
+#define FIL_RUNOUT_PIN     P1_25
+//#define FIL_RUNOUT2_PIN    P1_25
 
 //
 // Neopixel LED
@@ -107,21 +110,28 @@
   #define Z_CS_PIN         P1_08
 #endif
 
-#define E0_STEP_PIN        P2_13
-#define E0_DIR_PIN         P0_11
-#define E0_ENABLE_PIN      P2_12
+#define E0_STEP_PIN        P2_05
+#define E0_DIR_PIN         P2_05
+#define E0_ENABLE_PIN      P2_05
 #ifndef E0_CS_PIN
-  #define E0_CS_PIN        P1_04
+  #define E0_CS_PIN        P2_05
 #endif
 
-#undef E1_STEP_PIN // undef pins defined in "pin_BTT_SKR.h"
-#undef E1_DIR_PIN
-#undef E1_ENABLE_PIN
-#define E1_STEP_PIN        P1_15
-#define E1_DIR_PIN         P1_14
-#define E1_ENABLE_PIN      P1_16
+//#undef E1_STEP_PIN // undef pins defined in "pin_BTT_SKR.h"
+//#undef E1_DIR_PIN
+//#undef E1_ENABLE_PIN
+#define E1_STEP_PIN        P2_13
+#define E1_DIR_PIN         P0_11
+#define E1_ENABLE_PIN      P2_12
 #ifndef E1_CS_PIN
-  #define E1_CS_PIN        P1_01
+  #define E1_CS_PIN        P1_04
+#endif
+
+#define E2_STEP_PIN        P1_15
+#define E2_DIR_PIN         P1_14
+#define E2_ENABLE_PIN      P1_16
+#ifndef E2_CS_PIN
+  #define E2_CS_PIN        P1_01
 #endif
 
 #undef TEMP_BED_PIN
@@ -175,11 +185,14 @@
   #define Z_SERIAL_TX_PIN  P1_08
   #define Z_SERIAL_RX_PIN  P1_08
 
-  #define E0_SERIAL_TX_PIN P1_04
-  #define E0_SERIAL_RX_PIN P1_04
+  #define E0_SERIAL_TX_PIN P0_02
+  #define E0_SERIAL_RX_PIN P0_02
 
-  #define E1_SERIAL_TX_PIN P1_01
-  #define E1_SERIAL_RX_PIN P1_01
+  #define E1_SERIAL_TX_PIN P1_04
+  #define E1_SERIAL_RX_PIN P1_04
+
+  #define E2_SERIAL_TX_PIN P1_01
+  #define E2_SERIAL_RX_PIN P1_01
 
   #define Z2_SERIAL_TX_PIN P1_01
   #define Z2_SERIAL_RX_PIN P1_01
